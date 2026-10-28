@@ -1,0 +1,9 @@
+scenario,policy,pool_size,hot_pages,cold_pages,seeds,mean_overall_hit_rate_percent,stdev_overall_hit_rate_percent,mean_hot_hit_rate_percent,stdev_hot_hit_rate_percent,mean_hits,mean_misses
+baseline,LRU,10,3,8,5,49.33,4.08,83.2,1.35,177.6,182.4
+baseline,CLOCK,10,3,8,5,64.44,2.44,86.3,1.4,232,128
+larger_hot_set,LRU,10,4,8,5,39.94,1.08,71.9,1.95,143.8,216.2
+larger_hot_set,CLOCK,10,4,8,5,43.78,4.77,73.3,2.39,157.6,202.4
+longer_scan,LRU,10,3,12,5,32.82,0.38,72.2,0.84,144.4,295.6
+longer_scan,CLOCK,10,3,12,5,32.82,0.38,72.2,0.84,144.4,295.6
+larger_pool,LRU,16,4,14,5,29.96,0.81,71.9,1.95,143.8,336.2
+larger_pool,CLOCK,16,4,14,5,34.79,5.05,74.2,2.08,167,313
