@@ -29,6 +29,10 @@ python web_app.py
 
 The workbench opens at `http://127.0.0.1:8000`. Use **+ New database** in the header to create a separate database, then run `CREATE TABLE ...` in its SQL editor. Databases persist under `minidb_web_catalog/databases/`. The existing `default` database continues to use the original catalog. If port 8000 is unavailable, set a different port first, for example `$env:MINIDB_PORT = "8765"`. Keep that PowerShell window open while using the UI, then stop the server with `Ctrl+C`.
 
+## Load fictional sample data
+
+Run python seed_sample_data.py before starting the web app. It creates a separate demo_seed database with a sample_customers table and four fictional rows. Running it again only adds missing sample IDs. The database stays under the local, Git-ignored minidb_web_catalog/ directory. If the web app is already running, restart it so it discovers the new database, then choose demo_seed in the database menu.
+
 ## Database workflow
 
 The SQL shell and browser editor support `CREATE DATABASE`, `SHOW DATABASES`, `USE`, `BEGIN`, `COMMIT`, and `ROLLBACK`. Each database has an independent table catalog. Transactions are limited to one database; an error inside an active transaction automatically rolls it back. The page WAL replays durable page images after restart, but transaction commit/rollback is not crash-atomic: a crash during a multi-page transaction can recover a partial statement. In the shell, the prompt shows the selected database.
