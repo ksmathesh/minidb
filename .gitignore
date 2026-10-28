@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.db
+.pytest_cache/
+.coverage
+cache_pollution_timeline.csv
+
+minidb_web_catalog/
+
+cache_pollution_summary.csv
+minidb_cli_catalog/
+
+*.wal
+*.json.tmp
